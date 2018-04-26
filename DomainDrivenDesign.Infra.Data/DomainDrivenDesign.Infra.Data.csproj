@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>a5c9c47a-c1b2-446c-ba35-bb6180690afe</ProjectGuid>
+    <ProjectGuid>{A5C9C47A-C1B2-446C-BA35-BB6180690AFE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DomainDrivenDesign.Infra.Data</RootNamespace>
@@ -30,24 +30,64 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Context\DomainDrivenDesignContext.cs" />
+    <Compile Include="EntityConfig\ClientConfiguration.cs" />
+    <Compile Include="EntityConfig\ProductConfiguration.cs" />
+    <Compile Include="Migrations\201804262011458_AddedCLientClass.cs" />
+    <Compile Include="Migrations\201804262011458_AddedCLientClass.Designer.cs">
+      <DependentUpon>201804262011458_AddedCLientClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804262031042_Added FluentApi configurations And Overrode default EntityFrameWork Defaults .cs" />
+    <Compile Include="Migrations\201804262031042_Added FluentApi configurations And Overrode default EntityFrameWork Defaults .Designer.cs">
+      <DependentUpon>201804262031042_Added FluentApi configurations And Overrode default EntityFrameWork Defaults .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804262034191_RenamedIdCollumOfClient.cs" />
+    <Compile Include="Migrations\201804262034191_RenamedIdCollumOfClient.Designer.cs">
+      <DependentUpon>201804262034191_RenamedIdCollumOfClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainDrivenDesign.Domain\DomainDrivenDesign.Domain.csproj">
+      <Project>{d8d0e314-2ae7-474a-a430-bd965486de60}</Project>
+      <Name>DomainDrivenDesign.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804262011458_AddedCLientClass.resx">
+      <DependentUpon>201804262011458_AddedCLientClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804262031042_Added FluentApi configurations And Overrode default EntityFrameWork Defaults .resx">
+      <DependentUpon>201804262031042_Added FluentApi configurations And Overrode default EntityFrameWork Defaults .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804262034191_RenamedIdCollumOfClient.resx">
+      <DependentUpon>201804262034191_RenamedIdCollumOfClient.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
