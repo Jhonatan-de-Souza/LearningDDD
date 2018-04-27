@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace DomainDrivenDesign.Infra.Data.Context
 {
-    class DomainDrivenDesignContext : DbContext
+    public class DomainDrivenDesignContext : DbContext
     {
         public DomainDrivenDesignContext()
             : base("DDDConnectionString")
@@ -17,6 +17,7 @@ namespace DomainDrivenDesign.Infra.Data.Context
         }
 
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -35,6 +36,7 @@ namespace DomainDrivenDesign.Infra.Data.Context
                     .Configure(p => p.HasMaxLength(249));
 
             modelBuilder.Configurations.Add(new ClientConfiguration());
+            modelBuilder.Configurations.Add(new ProductConfiguration());
 
         }
 

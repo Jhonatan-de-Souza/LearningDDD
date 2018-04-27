@@ -62,8 +62,15 @@
     <Compile Include="Migrations\201804262034191_RenamedIdCollumOfClient.Designer.cs">
       <DependentUpon>201804262034191_RenamedIdCollumOfClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804262322515_Added Products Table.cs" />
+    <Compile Include="Migrations\201804262322515_Added Products Table.Designer.cs">
+      <DependentUpon>201804262322515_Added Products Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ClientRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DomainDrivenDesign.Domain\DomainDrivenDesign.Domain.csproj">
@@ -71,9 +78,7 @@
       <Name>DomainDrivenDesign.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -87,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804262034191_RenamedIdCollumOfClient.resx">
       <DependentUpon>201804262034191_RenamedIdCollumOfClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804262322515_Added Products Table.resx">
+      <DependentUpon>201804262322515_Added Products Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
