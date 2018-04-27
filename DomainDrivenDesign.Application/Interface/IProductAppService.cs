@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DomainDrivenDesign.Domain.Entities;
 
-namespace DomainDrivenDesign.Domain.Interfaces
+namespace DomainDrivenDesign.Application.Interface
 {
-    public interface IProductRepository : IRepositoryBase<Product>
+    interface IProductAppService : IAppServiceBase<Product>
     {
         IEnumerable<Product> FindByName(string name);
     }

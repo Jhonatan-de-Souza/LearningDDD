@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DomainDrivenDesign.Domain.Interfaces;
+using DomainDrivenDesign.Domain.Interfaces.Repositories;
 using DomainDrivenDesign.Infra.Data.Context;
 
 namespace DomainDrivenDesign.Infra.Data.Repositories

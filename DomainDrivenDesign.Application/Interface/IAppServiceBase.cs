@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DomainDrivenDesign.Domain.Interfaces
+namespace DomainDrivenDesign.Application.Interface
 {
-    public interface IRepositoryBase<TEntity> where TEntity : class
+    public interface IAppServiceBase<TEntity> where TEntity : class
     {
         void Add(TEntity obj);
-
         TEntity GetById(int id);
         IEnumerable<TEntity> GetAll();
         void Update(TEntity obj);

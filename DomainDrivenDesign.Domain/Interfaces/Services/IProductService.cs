@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using DomainDrivenDesign.Domain.Entities;
 
-namespace DomainDrivenDesign.Domain.Interfaces
+namespace DomainDrivenDesign.Domain.Interfaces.Services
 {
-    public interface IClientRepository : IRepositoryBase<Client>
+    public interface IProductService : IServiceBase<Product>
     {
+        IEnumerable<Product> FindByName(string name);
     }
 }

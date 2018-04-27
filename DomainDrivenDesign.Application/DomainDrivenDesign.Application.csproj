@@ -40,7 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppServiceBase.cs" />
+    <Compile Include="ClientAppService.cs" />
+    <Compile Include="Interface\IAppServiceBase.cs" />
+    <Compile Include="Interface\IClientAppService.cs" />
+    <Compile Include="Interface\IProductAppService.cs" />
+    <Compile Include="ProductAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainDrivenDesign.Domain\DomainDrivenDesign.Domain.csproj">
+      <Project>{d8d0e314-2ae7-474a-a430-bd965486de60}</Project>
+      <Name>DomainDrivenDesign.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

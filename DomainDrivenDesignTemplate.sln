@@ -10,6 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{8F224F9A-00D2-46C2-AD4B-27C9FC549D0A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{473B9190-8006-4602-AD6E-8EA9DF9BB258}"
+	ProjectSection(SolutionItems) = preProject
+		DomainDrivenDesign.Application\Interface\IProductAppService.cs = DomainDrivenDesign.Application\Interface\IProductAppService.cs
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{773CE757-D800-4304-AF51-B95A3784789E}"
 EndProject
