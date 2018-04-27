@@ -7,7 +7,7 @@ using DomainDrivenDesign.Domain.Entities;
 
 namespace DomainDrivenDesign.Application.Interface
 {
-    interface IProductAppService : IAppServiceBase<Product>
+    public interface IProductAppService : IAppServiceBase<Product>
     {
         IEnumerable<Product> FindByName(string name);
     }

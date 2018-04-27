@@ -1,17 +1,30 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
+using DomainDrivenDesign.Application.Interface;
+using DomainDrivenDesign.Domain.Entities;
+using DomainDrivenDesign.MVC.ViewModels;
 
 namespace DomainDrivenDesign.MVC.Controllers
 {
     public class ClientController : Controller
     {
+        private readonly IClientAppService _clientApp;
+
+        public ClientController(IClientAppService clientApp)
+        {
+            _clientApp = clientApp;
+        }
+
         // GET: Client
         public ActionResult Index()
         {
-            return View();
+            var viewModel = Mapper.Map<IEnumerable<Client>, IEnumerable<ClientViewModel>>(_clientApp.GetAll());
+            return View(viewModel);
         }
 
         // GET: Client/Details/5
